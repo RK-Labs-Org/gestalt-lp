@@ -115,8 +115,9 @@ Tokens (herdados do brand book do produto — não inventar cores novas):
 
 Diferença em relação ao produto: o app principal é denso (ferramenta
 operacional de chão de fábrica). A LP é o oposto — **muito espaço em
-branco, tipografia grande no hero, screenshots do produto como elemento
-visual principal**, sombras quase imperceptíveis.
+branco, mas sem desperdício de espaço ou longos trechos visualmente
+vazios**, tipografia grande no hero, screenshots do produto como
+elemento visual principal, sombras quase imperceptíveis.
 
 ### Proibido (não fazer sob nenhuma circunstância)
 
@@ -135,15 +136,20 @@ visual principal**, sombras quase imperceptíveis.
 
 Se houver screenshots/assets reais do Gestalt disponíveis no projeto,
 use-os como fonte visual pro mockup do hero e pro product showcase. Não
-recrie telas fictícias do produto por conta própria — o brand book em
-`../Gestalt/design-system/gestalt/MASTER.md` descreve os componentes
-reais (Table, Badge, MetricCard etc.), então qualquer tela recriada deve
-seguir essa especificação exatamente, sem inventar funcionalidade que
-não existe no produto. Caso ainda não haja assets reais anexados a este
-prompt, crie **placeholders estruturais claramente identificados** (ex.
-frame com texto "[screenshot real do Gestalt aqui]") para substituição
-posterior — nunca um "ERP fake" genérico que pareça bonito mas seja
-visualmente diferente do produto real.
+recrie telas fictícias do produto por conta própria. Caso ainda não haja
+assets reais anexados a este prompt, crie **placeholders estruturais
+claramente identificados** (ex. frame com texto "[screenshot real do
+Gestalt aqui]") para substituição posterior — nunca um "ERP fake"
+genérico que pareça bonito mas seja visualmente diferente do produto
+real.
+
+Se o arquivo `../Gestalt/design-system/gestalt/MASTER.md` estiver
+acessível, leia-o antes de definir componentes ou recriar qualquer tela
+do produto — ele descreve os componentes reais (Table, Badge, MetricCard
+etc.) e qualquer tela recriada deve seguir essa especificação
+exatamente, sem inventar funcionalidade que não existe no produto. Se
+não estiver acessível, não invente regras adicionais de design; siga
+exclusivamente os tokens e regras deste prompt.
 
 ## 6. Comportamento responsivo
 
@@ -153,7 +159,7 @@ abaixo), grids de cards (problema, módulos, planos) colapsam para 1
 coluna em telas estreitas, fluxo visual da seção Solução vira vertical
 no mobile.
 
-## 8. Conversão e UX
+## 7. Conversão e UX
 
 Objetivo primário da página: converter visitantes em solicitações de
 demonstração.
@@ -169,7 +175,47 @@ ordem: (1) o que é o Gestalt, (2) qual problema resolve, (3) para quem
 é, (4) como funciona, (5) por que é diferente, (6) como solicitar uma
 demonstração.
 
-## 9. Qualidade visual — evitar "AI slop"
+### Copy e conteúdo
+
+Toda a copy deve ser escrita em PT-BR natural, direta e específica ao
+contexto industrial.
+
+Não inventar:
+
+- Números de clientes
+- Percentuais de redução de desperdício
+- Resultados financeiros
+- Depoimentos
+- Nomes de clientes
+- Certificações
+- Integrações
+- Funcionalidades que não foram mencionadas neste briefing
+
+Não usar claims que exigiriam comprovação, como "reduza seu desperdício
+em 40%" ou "aumente sua produtividade em 3x". Quando uma informação
+comercial não estiver definida, prefira uma formulação neutra em vez de
+inventar dados.
+
+A linguagem deve falar com o dono/gestor da operação, não com um
+profissional de marketing ou investidor.
+
+### Hero — exploração de copy
+
+Antes de fixar a headline final, explore internamente até 3 direções de
+copy, todas orientadas a resultado e específicas ao domínio.
+
+A headline final deve:
+
+- Ser curta
+- Ser compreendida em poucos segundos
+- Falar de controle, material ou operação
+- Evitar começar com "Gestalt é um ERP..."
+- Evitar linguagem exageradamente publicitária
+
+"Do estoque à produção. Tudo sob controle." é a referência principal,
+não uma frase obrigatória.
+
+## 8. Qualidade visual — evitar "AI slop"
 
 Evite padrões visuais genéricos de páginas SaaS geradas por IA. Não
 usar:
@@ -196,7 +242,7 @@ editorial, com o azul (`accent`) aparecendo só onde realmente importa
 (CTA, foco, destaque pontual). O produto real — os screenshots — é a
 estrela da página, não a decoração ao redor dele.
 
-## 10. Qualidade técnica
+## 9. Qualidade técnica
 
 Projetar já pensando na implementação real em
 React + Vite + TypeScript + Tailwind. Priorizar:
@@ -212,7 +258,7 @@ React + Vite + TypeScript + Tailwind. Priorizar:
 Não propor interações que dependam de bibliotecas adicionais sem
 necessidade real.
 
-## 11. O que fazer
+## 10. O que fazer
 
 1. Primeiro, absorva o contexto de produto, posicionamento e a
    arquitetura de página das Seções 1-4.
@@ -223,8 +269,8 @@ necessidade real.
    - Espaçamento vertical entre seções
    - Sistema de componentes (botões, cards, badges) derivado dos tokens
      da Seção 5
-   - Comportamento dos CTAs (Seção 8)
-   - Composição do hero
+   - Comportamento dos CTAs (Seção 7)
+   - Composição do hero (Seção 7, exploração de copy)
    - Tratamento visual dos screenshots/mockups (Seção 5, assets reais
      vs. placeholder)
    - Estratégia responsiva (Seção 6)
@@ -234,7 +280,7 @@ necessidade real.
    terceira um dashboard genérico).
 4. Gere os artboards da landing page completa, seção por seção, na
    ordem da Seção 4 deste prompt, seguindo a Design Direction definida
-   no passo 2 e as regras de qualidade das Seções 9 e 10.
+   no passo 2 e as regras de qualidade das Seções 8 e 9.
 5. Ao final, o resultado será convertido para código em
    React + TypeScript + Tailwind (repositório `gestalt-lp`, já
    inicializado com os tokens deste brand book configurados em
