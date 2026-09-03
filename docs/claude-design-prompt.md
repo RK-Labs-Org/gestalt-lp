@@ -134,22 +134,26 @@ elemento visual principal, sombras quase imperceptíveis.
 
 ### Assets reais vs. placeholder
 
-Se houver screenshots/assets reais do Gestalt disponíveis no projeto,
-use-os como fonte visual pro mockup do hero e pro product showcase. Não
-recrie telas fictícias do produto por conta própria. Caso ainda não haja
-assets reais anexados a este prompt, crie **placeholders estruturais
-claramente identificados** (ex. frame com texto "[screenshot real do
-Gestalt aqui]") para substituição posterior — nunca um "ERP fake"
-genérico que pareça bonito mas seja visualmente diferente do produto
-real.
+Assets reais já disponíveis neste repositório, use-os diretamente:
 
-Se o arquivo `../Gestalt/design-system/gestalt/MASTER.md` estiver
-acessível, leia-o antes de definir componentes ou recriar qualquer tela
-do produto — ele descreve os componentes reais (Table, Badge, MetricCard
-etc.) e qualquer tela recriada deve seguir essa especificação
-exatamente, sem inventar funcionalidade que não existe no produto. Se
-não estiver acessível, não invente regras adicionais de design; siga
-exclusivamente os tokens e regras deste prompt.
+- Logo/wordmark: `src/assets/brand/gestalt-logo.png`
+- Ícone: `src/assets/brand/gestalt-icon.png`
+
+Não recrie a wordmark nem o ícone do zero — são a marca real. Para
+screenshots do produto (hero e product showcase), ainda não há assets
+reais neste repositório: crie **placeholders estruturais claramente
+identificados** (ex. frame com texto "[screenshot real do Gestalt
+aqui]") para substituição posterior — nunca um "ERP fake" genérico que
+pareça bonito mas seja visualmente diferente do produto real.
+
+Se o arquivo `docs/brand/MASTER.md` (cópia local do brand book do
+produto principal) estiver acessível, leia-o antes de definir
+componentes ou recriar qualquer tela do produto — ele descreve os
+componentes reais (Table, Badge, MetricCard etc.) e qualquer tela
+recriada deve seguir essa especificação exatamente, sem inventar
+funcionalidade que não existe no produto. Se não estiver acessível, não
+invente regras adicionais de design; siga exclusivamente os tokens e
+regras deste prompt.
 
 ## 6. Comportamento responsivo
 
